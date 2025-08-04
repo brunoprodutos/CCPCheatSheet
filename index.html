@@ -449,8 +449,6 @@
                         <li><strong>Máximo:</strong> Número máximo de instâncias</li>
                     </ul>
 
-                    <h4>Elastic Load Balancer (ELB)</h4>
-                    <p>Distribui automaticamente o tráfego de entrada entre múltiplas instâncias EC2. Funciona com solicitações externas e arquitetura interna (frontend-backend).</p>
                 </div>
 
                 <div class="subsection">
@@ -661,8 +659,70 @@
                             <strong>AWS Direct Connect</strong>
                             Conexão privada dedicada entre seu data center e uma VPC
                         </div>
+                        <div class="feature-item">
+                            <strong>AWS VPN</strong>
+                            Conexão segura entre sua rede local e uma VPC através da internet
+                        </div>
+                        <div class ="feature-item">
+                            <strong>AWS Transit Gateway</strong>
+                            Conecta múltiplas VPCs e redes locais através de um único gateway
+                        </div>
+                        <div class="feature-item">
+                            <strong>Elastic Load Balancer</strong>
+                            Distribui automaticamente o tráfego de entrada entre múltiplas instâncias EC2.
+                        </div>
                     </div>
-
+                    <!-- Comparison Table with centralized title -->
+                    <h4 style="color: #232f3e; margin: 20px 0 10px 0; text-align: center;">AWS ELB vs. Amazon Route 53</h4>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>AWS ELB</th>
+                                <th>Amazon Route 53</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Métodos de Roteamento</strong>(Atenção aos negritos)</td>
+                                <td>
+                                    <ul>
+                                        <li>Round Robin: <b>Distribuição sequencial</b></li>
+                                        <li>Menor Número de Requisições Pendentes</li>
+                                        <li>Sessões Fixas: <b>Mantém usuário no mesmo servidor</b></li>
+                                        <li>Balanceamento Entre Zonas: <b>Distribui entre AZs</b></li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Roteamento Simples: Um registro, múltiplos IPs</li>
+                                        <li>Roteamento Ponderado: Por peso/prioridade</li>
+                                        <li><b>Roteamento por Latência</b>: Menor tempo resposta</li>
+                                        <li>Roteamento por Failover: Alta disponibilidade</li>
+                                        <li>Roteamento Geográfico: Baseado na localização</li>
+                                        <li>Geoproximidade: Baseado na distância física</li>
+                                        <li>Múltiplos Valores: Retorna múltiplos endereços</li>
+                                        <li>Baseado em IP: Roteamento por faixa de IPs</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Targets (destinos) Suportados </strong></td>
+                                <td>Instâncias EC2, contêineres (ECS), funções Lambda, endereços IP</td>
+                                <td>Recursos AWS (ALB, NLB, CloudFront, S3, etc.) via registros Alias</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Verificações de Integridade</strong></td>
+                                <td>Monitora saúde dos targets registrados (EC2, contêineres, Lambda, IPs)</td>
+                                <td>Monitora saúde de endpoints (servidores web, verificações de integridade, alarmes CloudWatch)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ação em Falha</strong></td>
+                                <td>Remove target não saudável do pool de balanceamento</td>
+                                <td>Redireciona tráfego DNS para endpoints saudáveis</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <div class="highlight-box">
                         <h4>🏗️ Arquitetura VPC Típica</h4>
                         <p><strong>Componentes principais:</strong></p>
