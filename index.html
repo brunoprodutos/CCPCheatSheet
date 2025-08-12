@@ -377,7 +377,7 @@
             <div class="section-content">
                 <div class="subsection">
                     <h3>Amazon EC2 (Elastic Compute Cloud)</h3>
-                    <p><strong>Definição:</strong> Computação na nuvem - modelo CaaS (Cloud as a Service)</p>
+                    <p><strong>Definição:</strong> Computação na nuvem - modelo IaaS (Infrastrutura as a Service)</p>
                     
                     <h4>Tipos de Instâncias</h4>
                     <div class="feature-list">
@@ -406,20 +406,20 @@
                     <h4>Modelos de Preços</h4>
                     <div class="pricing-grid">
                         <div class="pricing-item">
-                            <h5>Sob Demanda</h5>
+                            <h5>Sob Demanda (On Demand)</h5>
                             <p>Sem compromisso, pague pelo que usar</p>
                         </div>
                         <div class="pricing-item">
-                            <h5>Planos de Economia</h5>
-                            <p>1-3 anos, flexibilidade para usar mais pelo preço sob demanda</p>
+                            <h5>Planos de Economia (Savings Plan)</h5>
+                            <p>1-3 anos, aplicavel a computing (EC2, Lambda, Fargate) flexibilidade para usar mais pelo preço com desconto</p>
                         </div>
                         <div class="pricing-item">
                             <h5>Instâncias Reservadas</h5>
-                            <p>1-3 anos, desconto significativo</p>
+                            <p>1-3 anos, desconto significativo, podendo <b>reservar capacidade</b>. Pode ser <b>Padrão</b>(maior desconto) ou <b>Conversível</b>(maior flexibilidade)</p>
                         </div>
                         <div class="pricing-item">
                             <h5>Spot</h5>
-                            <p>Até 90% de desconto, podem ser recuperadas pela AWS</p>
+                            <p>Até 90% de desconto, podem ser interrompidas a qualquer hora pela AWS</p>
                         </div>
                         <div class="pricing-item">
                             <h5>Host Dedicado</h5>
@@ -708,8 +708,8 @@
                             </tr>
                             <tr>
                                 <td><strong>Targets (destinos) Suportados </strong></td>
-                                <td>Instâncias EC2, contêineres (ECS), funções Lambda, endereços IP</td>
-                                <td>Recursos AWS (ALB, NLB, CloudFront, S3, etc.) via registros Alias</td>
+                                <td>Instâncias <b>EC2</b>, <b>contêineres</b> (ECS), funções <b>Lambda</b>, endereços <b>IP</b></td>
+                                <td><b>Recursos AWS</b> (ALB, NLB, CloudFront, S3, etc.) via registros Alias</td>
                             </tr>
                             <tr>
                                 <td><strong>Verificações de Integridade</strong></td>
